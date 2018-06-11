@@ -1,3 +1,4 @@
+import java.io.FileNotFoundException;
 import java.util.*;
 
 import static java.lang.System.out;
@@ -8,8 +9,13 @@ public class hashmapPractice {
     static int userInteger;
     static String userValue;
     static HashMap<Integer, String> myMap = new HashMap<Integer, String>();
-    public static void main(String[] args) {
-
+    public static void main(String[] args) throws FileNotFoundException {
+        File file = new File("C:/Users/GBTC441020ur/IdeaProjects/hashMapPracticeFile.txt");
+        Scanner scannerFile = new Scanner(file);//note that Scanner can read from a file!
+        while (scannerFile.hasNextLine()) {
+            String line = scannerFile.nextLine();
+            System.out.println(line);
+        }
         Scanner scannerInput = new Scanner(System.in);
         userInteger = 0;
         myMap.put(10,"ten");
